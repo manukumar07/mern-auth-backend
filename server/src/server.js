@@ -50,6 +50,10 @@ app.use(limiter);
 app.use("/api/v1/auth", authRoutes);
 
 
+app.get("/", (req, res) => {
+    res.send("Backend is working ✅");
+});
+
 // ⚠️ Error handler
 app.use((err, req, res, next) => {
     console.error("❌", err.stack);
